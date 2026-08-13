@@ -26,7 +26,7 @@
                     <span class="text-lg font-bold bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">
                         ReembolsoJá
                     </span>
-                    <span class="block text-[10px] text-emerald-400 font-medium">Auditor Universal v5.8 - Art. 42 CDC</span>
+                    <span class="block text-[10px] text-emerald-400 font-medium">Auditor Universal v5.9 - Art. 42 CDC & LGPD</span>
                 </div>
             </div>
             <button onclick="carregarExemplo()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition flex items-center gap-1.5">
@@ -120,6 +120,21 @@
                     class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 text-xs font-mono text-slate-200 focus:outline-none focus:border-emerald-500/80 transition placeholder:text-slate-600 leading-relaxed"
                     placeholder="O texto do seu PDF ou foto aparecerá aqui..."
                 ></textarea>
+            </div>
+
+            <!-- Aviso de Privacidade e LGPD -->
+            <div class="bg-slate-950/80 border border-emerald-500/20 rounded-xl p-3 flex items-start gap-3 text-[11px] text-slate-300">
+                <div class="p-1.5 bg-emerald-500/10 rounded-lg text-emerald-400 border border-emerald-500/20 shrink-0">
+                    <i class="fa-solid fa-user-lock text-sm"></i>
+                </div>
+                <div class="space-y-0.5 leading-relaxed">
+                    <span class="font-bold text-slate-100 block">
+                        Privacidade & Proteção de Dados (LGPD - Lei nº 13.709/2018)
+                    </span>
+                    <p class="text-slate-400">
+                        Sua fatura é processada <strong class="text-emerald-400 font-semibold">100% localmente no seu navegador</strong>. Nenhum dado pessoal, nome, CPF ou histórico de compras é enviado para servidores externos ou armazenado em banco de dados.
+                    </p>
+                </div>
             </div>
 
             <!-- Indicador de Progresso -->
@@ -655,7 +670,6 @@ Detalhamento da fatura - Lançamentos: compras e saques
 
             let emissora = 'Fatura Bancária';
             const textoUpper = texto.toUpperCase();
-            // Normaliza o texto removendo acentos para garantir a correspondência (ex: ITAÚ -> ITAU)
             const textoSemAcento = textoUpper.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
             if (textoSemAcento.includes('PORTOBANK') || textoSemAcento.includes('PORTO SEGURO') || textoSemAcento.includes('PORTOSEG')) {
