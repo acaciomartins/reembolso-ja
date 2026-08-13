@@ -655,12 +655,12 @@ Detalhamento da fatura - Lançamentos: compras e saques
 
             let emissora = 'Fatura Bancária';
             const textoUpper = texto.toUpperCase();
-            if (textoUpper.includes('PORTOBANK') || textoUpper.includes('PORTO SEGURO')) emissora = 'PortoBank';
-            else if (textoUpper.includes('ITAÚ') || textoUpper.includes('ITAUCARD')) emissora = 'Itaú Unibanco';
-            else if (textoUpper.includes('BRADESCO')) emissora = 'Bradesco';
+            if (textoUpper.includes('PORTOBANK') || textoUpper.includes('PORTO SEGURO') || textoUpper.includes('PORTOSEG')) emissora = 'PortoBank';
+            else if (textoUpper.includes('ITAÚ') || textoUpper.includes('ITAU') || textoUpper.includes('ITAUCARD')) emissora = 'Itaú Unibanco';
+            else if (textoUpper.includes('BRADESCO') || textoUpper.includes('BRADESCARD')) emissora = 'Bradesco';
             else if (textoUpper.includes('SANTANDER')) emissora = 'Santander';
             else if (textoUpper.includes('NUBANK')) emissora = 'Nubank';
-            else if (textoUpper.includes('BANCO DO BRASIL') || textoUpper.includes('BB')) emissora = 'Banco do Brasil';
+            else if (textoUpper.includes('BANCO DO BRASIL') || /\bBB\b/.test(textoUpper)) emissora = 'Banco do Brasil';
             else if (textoUpper.includes('CAIXA')) emissora = 'Caixa Econômica';
 
             document.getElementById('badgeBancoIdentificado').innerText = emissora;
