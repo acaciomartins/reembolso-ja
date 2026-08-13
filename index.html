@@ -15,9 +15,8 @@
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans min-h-screen pb-12">
 
-    <!-- Cabeçalho -->
     <header class="border-b border-slate-800 bg-slate-900/90 sticky top-0 z-50 backdrop-blur">
-        <div class="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between gap-2">
+        <div class="max-w-2xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-2">
                 <div class="p-2 bg-emerald-500/10 rounded-xl border border-emerald-500/20 text-emerald-400">
                     <i class="fa-solid fa-shield-halved text-xl"></i>
@@ -26,38 +25,17 @@
                     <span class="text-lg font-bold bg-gradient-to-r from-emerald-400 to-teal-200 bg-clip-text text-transparent">
                         ReembolsoJá
                     </span>
-                    <div class="flex items-center gap-2">
-                        <span class="block text-[10px] text-emerald-400 font-medium">Auditor Universal v6.0 - Art. 42 CDC</span>
-                        <!-- Badge do Contador de Acessos Únicos -->
-                        <span id="badgeAcessosUnicos" class="inline-flex items-center gap-1 text-[10px] bg-slate-800 text-slate-300 px-2 py-0.5 rounded-full border border-slate-700/80 font-mono">
-                            <i class="fa-solid fa-users text-emerald-400 text-[9px]"></i>
-                            <span id="qtdAcessosUnicos">--</span> acessos
-                        </span>
-                    </div>
+                    <span class="block text-[10px] text-emerald-400 font-medium">
+                        Auditor Universal v6.0 • <i class="fa-solid fa-users text-[9px]"></i> <span id="qtdAcessosUnicos">1</span> <span id="lblAcessosUnicos">acesso único</span>
+                    </span>
                 </div>
             </div>
-            
-            <div class="flex items-center gap-2">
-                <!-- Botão para Abrir Consumidor.gov.br em Nova Aba -->
-                <a 
-                    href="https://www.consumidor.gov.br" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-1.5 rounded-lg border border-slate-700 transition flex items-center gap-1.5"
-                    title="Abrir o portal Consumidor.gov.br em outra aba"
-                >
-                    <i class="fa-solid fa-arrow-up-right-from-square text-emerald-400"></i>
-                    <span class="hidden sm:inline">Consumidor.gov.br</span>
-                </a>
-
-                <button onclick="carregarExemplo()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition flex items-center gap-1.5">
-                    <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i> Testar Exemplo
-                </button>
-            </div>
+            <button onclick="carregarExemplo()" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg border border-slate-700 transition flex items-center gap-1.5">
+                <i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i> Testar Exemplo
+            </button>
         </div>
     </header>
 
-    <!-- Conteúdo Principal -->
     <main class="max-w-2xl mx-auto px-4 py-6 space-y-6">
 
         <!-- Banner Informativo -->
@@ -71,7 +49,6 @@
             </p>
         </div>
 
-        <!-- Painel de Entrada de Dados -->
         <div class="bg-slate-900 rounded-2xl p-4 border border-slate-800 space-y-4">
             
             <!-- Seletor de Modo de Entrada -->
@@ -109,7 +86,15 @@
                         Clique aqui para carregar a fatura em PDF ou Foto
                     </p>
                     <p class="text-[11px] text-slate-400">
-                        Suporta Porto Seguro, Itaú, Bradesco, BB, Santander, Caixa, Nubank e outros
+                        Suporta PortoBank, Itaú, Bradesco, BB, Santander, Caixa, Nubank e outros
+                    </p>
+                </div>
+
+                <!-- Aviso de Privacidade e Segurança LGPD -->
+                <div class="p-3 bg-slate-950/90 border border-slate-800/80 rounded-xl flex items-start space-x-2.5 text-[11px] text-slate-400">
+                    <i class="fa-solid fa-lock text-emerald-400 text-xs mt-0.5 shrink-0"></i>
+                    <p class="leading-relaxed">
+                        <strong class="text-slate-300">Privacidade Garantida (LGPD - Lei nº 13.709/2018):</strong> O processamento da sua fatura é feito 100% de forma local no seu navegador. Nenhum dado pessoal, nome ou CPF é enviado para servidores externos.
                     </p>
                 </div>
 
@@ -144,21 +129,6 @@
                 ></textarea>
             </div>
 
-            <!-- Aviso de Privacidade e LGPD -->
-            <div class="bg-slate-950/80 border border-emerald-500/20 rounded-xl p-3 flex items-start gap-3 text-[11px] text-slate-300">
-                <div class="p-1.5 bg-emerald-500/10 rounded-lg text-emerald-400 border border-emerald-500/20 shrink-0">
-                    <i class="fa-solid fa-user-lock text-sm"></i>
-                </div>
-                <div class="space-y-0.5 leading-relaxed">
-                    <span class="font-bold text-slate-100 block">
-                        Privacidade & Proteção de Dados (LGPD - Lei nº 13.709/2018)
-                    </span>
-                    <p class="text-slate-400">
-                        Sua fatura é processada <strong class="text-emerald-400 font-semibold">100% localmente no seu navegador</strong>. Nenhum dado pessoal, nome, CPF ou histórico de compras é enviado para servidores externos ou armazenado em banco de dados.
-                    </p>
-                </div>
-            </div>
-
             <!-- Indicador de Progresso -->
             <div id="progressoContainer" class="hidden space-y-1">
                 <div class="flex justify-between text-[11px] font-mono text-emerald-400">
@@ -190,7 +160,6 @@
             </button>
         </div>
 
-        <!-- Painel de Resultados -->
         <div id="painelResultado" class="hidden space-y-5">
             
             <!-- Resumo da Fatura Analisada -->
@@ -286,7 +255,6 @@
                 </p>
             </div>
 
-            <!-- Gerador de Notificação Legal Com Campos Separados -->
             <div id="boxCarta" class="hidden bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-4 shadow-xl">
                 <div class="flex items-center justify-between border-b border-slate-800 pb-3">
                     <h3 class="text-xs font-bold text-slate-200 flex items-center gap-1.5">
@@ -381,7 +349,6 @@
                 </button>
             </div>
 
-            <!-- Guia Informativo: Tabela de E-mails e Canais das Ouvidorias -->
             <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 space-y-3">
                 <div class="flex items-center justify-between border-b border-slate-800 pb-2">
                     <h3 class="text-xs font-bold text-slate-200 flex items-center gap-1.5">
@@ -435,7 +402,6 @@
                             <i class="fa-regular fa-copy"></i>
                         </button>
                     </div>
-                    <!-- ITEM CONSUMIDOR.GOV.BR QUE ABRE EM NOVA ABA -->
                     <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800/80 flex items-center justify-between gap-2">
                         <div>
                             <span class="font-bold text-slate-200 block">Consumidor.gov.br</span>
@@ -445,10 +411,10 @@
                             <button onclick="copiarTextoDireto('https://www.consumidor.gov.br')" title="Copiar Link" class="text-slate-400 hover:text-emerald-400 p-2 text-xs border border-slate-800 rounded-lg bg-slate-900 transition">
                                 <i class="fa-regular fa-copy"></i>
                             </button>
-                            <a href="https://www.consumidor.gov.br" target="_blank" rel="noopener noreferrer" title="Abrir Portal Oficial em outra aba" class="text-emerald-400 hover:text-emerald-300 px-2.5 py-1.5 text-xs font-semibold border border-emerald-500/30 rounded-lg bg-emerald-500/10 active:scale-95 transition flex items-center gap-1.5">
+                            <button onclick="abrirLinkExterno('https://www.consumidor.gov.br')" title="Abrir Portal Oficial" class="text-emerald-400 hover:text-emerald-300 px-2.5 py-1.5 text-xs font-semibold border border-emerald-500/30 rounded-lg bg-emerald-500/10 active:scale-95 transition flex items-center gap-1.5">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                 <span class="text-[10px]">Abrir Site</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -458,7 +424,6 @@
 
     </main>
 
-    <!-- Lógica JavaScript -->
     <script>
         let modoAtual = 'upload';
         let ficheiroCarregado = null;
@@ -505,44 +470,51 @@
             'PAGUE SUA FATURA COM A OPÇÃO', 'O PARCELAMENTO DA FATURA TEM'
         ];
 
-        // Contador de Acessos Únicos por Navegador/Dispositivo (com persistência local)
-        async function contabilizarAcessoUnico() {
-            const badgeEl = document.getElementById('qtdAcessosUnicos');
-            if (!badgeEl) return;
+        function inicializarContadorAcessos() {
+            try {
+                let visitorId = localStorage.getItem('reembolsoja_visitor_id');
+                let totalAcessos = parseInt(localStorage.getItem('reembolsoja_qtd_acessos') || '0');
+                
+                // Reseta valores inflados ou corrompidos salvos anteriormente no localStorage
+                if (isNaN(totalAcessos) || totalAcessos >= 100) {
+                    totalAcessos = 0;
+                    localStorage.removeItem('reembolsoja_qtd_acessos');
+                    localStorage.removeItem('reembolsoja_visitor_id');
+                    visitorId = null;
+                }
 
-            const CHAVE_VISITADO = 'reembolsoja_unique_visit_v6';
-            const CHAVE_CONTAGEM = 'reembolsoja_count_unique_val';
-            const jaVisitou = localStorage.getItem(CHAVE_VISITADO);
-
-            let contagemAtual = parseInt(localStorage.getItem(CHAVE_CONTAGEM) || '1540');
-
-            if (!jaVisitou) {
-                contagemAtual += 1;
-                localStorage.setItem(CHAVE_VISITADO, 'true');
-                localStorage.setItem(CHAVE_CONTAGEM, contagemAtual.toString());
+                if (!visitorId) {
+                    visitorId = 'v_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+                    localStorage.setItem('reembolsoja_visitor_id', visitorId);
+                    totalAcessos = 1;
+                    localStorage.setItem('reembolsoja_qtd_acessos', '1');
+                }
+                
+                const elNum = document.getElementById('qtdAcessosUnicos');
+                const elLbl = document.getElementById('lblAcessosUnicos');
+                
+                if (elNum) elNum.innerText = totalAcessos.toLocaleString('pt-BR');
+                if (elLbl) elLbl.innerText = totalAcessos === 1 ? 'acesso único' : 'acessos únicos';
+            } catch (e) {
+                console.warn('LocalStorage inacessível:', e);
             }
-
-            badgeEl.innerText = contagemAtual.toLocaleString('pt-BR');
         }
 
         function inicializarPdfWorker() {
             try {
                 if (typeof pdfjsLib !== 'undefined' && !window._pdfWorkerConfigurado) {
-                    const workerCode = `importScripts('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js');`;
-                    const blob = new Blob([workerCode], { type: 'application/javascript' });
-                    pdfjsLib.GlobalWorkerOptions.workerSrc = URL.createObjectURL(blob);
+                    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
                     window._pdfWorkerConfigurado = true;
                 }
             } catch (e) {
                 console.warn('Fallback worker PDF:', e);
             }
         }
-        inicializarPdfWorker();
 
-        // Executa inicialização no carregamento da página
-        window.addEventListener('DOMContentLoaded', () => {
-            contabilizarAcessoUnico();
-        });
+        window.onload = function() {
+            inicializarPdfWorker();
+            inicializarContadorAcessos();
+        };
 
         function alternarModo(modo) {
             modoAtual = modo;
@@ -632,6 +604,21 @@ Detalhamento da fatura - Lançamentos: compras e saques
 31/07 DROGARIAS PACHECO S 01/03 ALFENAS 141,01`;
         }
 
+        async function renderPdfPageToCanvas(page) {
+            const viewport = page.getViewport({ scale: 1.5 });
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            await page.render({
+                canvasContext: context,
+                viewport: viewport
+            }).promise;
+
+            return canvas;
+        }
+
         async function extrairPDFSistemas(file) {
             inicializarPdfWorker();
             document.getElementById('progressoContainer').classList.remove('hidden');
@@ -644,7 +631,7 @@ Detalhamento da fatura - Lançamentos: compras e saques
                 let linhasLidas = [];
 
                 for (let i = 1; i <= pdf.numPages; i++) {
-                    atualizarProgresso(`A ler página ${i} de ${pdf.numPages}...`, 20 + Math.round((i / pdf.numPages) * 70));
+                    atualizarProgresso(`A ler página ${i} de ${pdf.numPages}...`, 20 + Math.round((i / pdf.numPages) * 50));
                     const page = await pdf.getPage(i);
                     const textContent = await page.getTextContent();
                     
@@ -663,10 +650,27 @@ Detalhamento da fatura - Lançamentos: compras e saques
                     });
                 }
 
-                document.getElementById('faturaInput').value = linhasLidas.join('\n');
+                let textoExtraido = linhasLidas.join('\n');
+
+                // Fallback OCR: Se o PDF for escaneado/imagem e não contiver texto nativo
+                if (textoExtraido.trim().length < 15 && pdf.numPages > 0) {
+                    atualizarProgresso('PDF digitalizado (imagem) detectado. Lendo via OCR...', 70);
+                    const page = await pdf.getPage(1);
+                    const canvas = await renderPdfPageToCanvas(page);
+                    if (window.Tesseract) {
+                        const worker = await Tesseract.createWorker('por');
+                        const ret = await worker.recognize(canvas);
+                        textoExtraido = ret.data.text;
+                        await worker.terminate();
+                    }
+                }
+
+                document.getElementById('faturaInput').value = textoExtraido;
+                document.getElementById('ocrStatus').innerText = textoExtraido.trim() ? 'Leitura concluída com sucesso!' : 'Alerta: nenhum texto extraído do PDF.';
                 atualizarProgresso('Leitura concluída!', 100);
             } catch (e) {
                 console.error('Erro ao ler PDF:', e);
+                document.getElementById('ocrStatus').innerText = 'Erro na leitura do PDF';
             } finally {
                 setTimeout(() => document.getElementById('progressoContainer').classList.add('hidden'), 500);
             }
@@ -716,25 +720,17 @@ Detalhamento da fatura - Lançamentos: compras e saques
                 }
             }
 
+            // Normalização NFD para remover acentos na busca de emissoras
+            const textoNormalizado = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase();
+            
             let emissora = 'Fatura Bancária';
-            // Normaliza o texto removendo acentos para permitir comparação limpa de bancos
-            const textoNormalizado = texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase();
-
-            if (textoNormalizado.includes('PORTOBANK') || textoNormalizado.includes('PORTO SEGURO')) {
-                emissora = 'PortoBank';
-            } else if (textoNormalizado.includes('ITAU') || textoNormalizado.includes('ITAUCARD') || textoNormalizado.includes('UNIBANCO') || textoNormalizado.includes('PERSONNALITE')) {
-                emissora = 'Itaú Unibanco';
-            } else if (textoNormalizado.includes('BRADESCO') || textoNormalizado.includes('BRADESCARD')) {
-                emissora = 'Bradesco';
-            } else if (textoNormalizado.includes('SANTANDER')) {
-                emissora = 'Santander';
-            } else if (textoNormalizado.includes('NUBANK')) {
-                emissora = 'Nubank';
-            } else if (textoNormalizado.includes('BANCO DO BRASIL') || /\bBB\b/.test(textoNormalizado)) {
-                emissora = 'Banco do Brasil';
-            } else if (textoNormalizado.includes('CAIXA')) {
-                emissora = 'Caixa Econômica';
-            }
+            if (textoNormalizado.includes('PORTOBANK') || textoNormalizado.includes('PORTO SEGURO')) emissora = 'PortoBank';
+            else if (textoNormalizado.includes('ITAU') || textoNormalizado.includes('ITAUCARD') || textoNormalizado.includes('UNIBANCO') || textoNormalizado.includes('PERSONNALITE')) emissora = 'Itaú Unibanco';
+            else if (textoNormalizado.includes('BRADESCO') || textoNormalizado.includes('BRADESCARD')) emissora = 'Bradesco';
+            else if (textoNormalizado.includes('SANTANDER')) emissora = 'Santander';
+            else if (textoNormalizado.includes('NUBANK')) emissora = 'Nubank';
+            else if (/\bBB\b/.test(textoNormalizado) || textoNormalizado.includes('BANCO DO BRASIL')) emissora = 'Banco do Brasil';
+            else if (textoNormalizado.includes('CAIXA')) emissora = 'Caixa Econômica';
 
             document.getElementById('badgeBancoIdentificado').innerText = emissora;
             document.getElementById('lblBancoDestinatario').innerText = emissora;
@@ -764,28 +760,41 @@ Detalhamento da fatura - Lançamentos: compras e saques
         }
 
         async function executarAuditoria() {
-            let texto = document.getElementById('faturaInput').value;
             ocultarMensagem();
+            let texto = document.getElementById('faturaInput').value;
 
-            if (modoAtual === 'upload' && ficheiroCarregado && ficheiroCarregado.type.startsWith('image/') && !texto.trim()) {
+            // Se o usuário anexou o arquivo e o texto ainda não foi extraído, processa no momento do clique
+            if (modoAtual === 'upload' && ficheiroCarregado && !texto.trim()) {
                 document.getElementById('progressoContainer').classList.remove('hidden');
-                atualizarProgresso('A ler imagem com visão computacional (OCR)...', 40);
+                
+                const ePDF = ficheiroCarregado.type === 'application/pdf' || ficheiroCarregado.name.toLowerCase().endsWith('.pdf');
+                const eImagem = ficheiroCarregado.type.startsWith('image/');
 
-                try {
-                    const worker = await Tesseract.createWorker('por');
-                    const ret = await worker.recognize(ficheiroCarregado);
-                    texto = ret.data.text;
-                    document.getElementById('faturaInput').value = texto;
-                    await worker.terminate();
-                } catch (e) {
-                    mostrarMensagem('Erro ao ler texto da foto. Certifique-se de que esteja nítida.');
-                } finally {
-                    document.getElementById('progressoContainer').classList.add('hidden');
+                if (ePDF) {
+                    atualizarProgresso('A ler fatura PDF...', 30);
+                    await extrairPDFSistemas(ficheiroCarregado);
+                    texto = document.getElementById('faturaInput').value;
+                } else if (eImagem) {
+                    atualizarProgresso('A ler imagem com visão computacional (OCR)...', 40);
+                    try {
+                        const worker = await Tesseract.createWorker('por');
+                        const ret = await worker.recognize(ficheiroCarregado);
+                        texto = ret.data.text;
+                        document.getElementById('faturaInput').value = texto;
+                        await worker.terminate();
+                    } catch (e) {
+                        mostrarMensagem('Erro ao ler texto da foto. Certifique-se de que esteja nítida.');
+                    }
                 }
+                document.getElementById('progressoContainer').classList.add('hidden');
             }
 
             if (!texto.trim()) {
-                mostrarMensagem('Por favor, carregue o PDF da fatura, foto ou cole o texto.');
+                if (ficheiroCarregado) {
+                    mostrarMensagem('Não foi possível extrair o texto deste arquivo. Se for um PDF protegido por senha ou imagem ilegível, você pode colar o texto na aba "Ver / Editar Texto".');
+                } else {
+                    mostrarMensagem('Por favor, carregue o PDF da fatura, foto ou cole o texto.');
+                }
                 return;
             }
 
@@ -997,6 +1006,17 @@ CPF: [Seu CPF]`;
             document.body.removeChild(temp);
             mostrarMensagem(`Conteúdo <strong>${texto}</strong> copiado para a área de transferência!`);
             setTimeout(() => ocultarMensagem(), 3000);
+        }
+
+        function abrirLinkExterno(url) {
+            try {
+                const win = window.open(url, '_blank', 'noopener,noreferrer');
+                if (!win || win.closed || typeof win.closed === 'undefined') {
+                    window.location.href = url;
+                }
+            } catch (e) {
+                window.location.href = url;
+            }
         }
 
         function abrirClienteEmail() {
